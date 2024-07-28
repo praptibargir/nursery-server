@@ -11,8 +11,7 @@ const app = express()
 app.use(express.json())
 
 const dbConnection = async () => {
-    const conn = await mongoose.connect("mongodb+srv://praptibargir21:Gondu%402106@cluster0.imeuicf.mongodb.net/nursery-server")
-
+    const conn = await mongoose.connect(process.env.MONGODB_URL)
     if(conn){
         console.log(`MongoDB Connected`)
     }
